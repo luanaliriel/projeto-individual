@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+html { 
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: radial-gradient(circle, #ED7D1B, #FFA1A1);
+    font-family: "Inter", serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+header {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.container1,
+.container2,
+.container3 {
+    height: 25px;
+    border-radius: 2vh;
+    border: 1.5px solid black;
+}
+
+.container1 {
+    width: 95%;
+    background-color: #FFA75B;
+}
+
+.container2 {
+    width: 89%;
+    background-color: #FFA1A1;
+}
+
+.container3 {
+    width: 81%;
+    background-color: #D9FFFC;
+}
+
+.home {
+    background: linear-gradient(to bottom right, #FFA1A1,#00D8C6,#FFA1A1, #00D8C6, #FFA1A1, #00beaf, #FFA1A1, #00beaf, #D9FFFC);
+    animation: animacaoHome 8s ease infinite;
+    background-size: 400% 400%;
+    width: 19vh;
+    height: 19vh;
+    text-align: center;
+    font-size: 160%;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    border: 1.5px solid black;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.home:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+@keyframes animacaoHome {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navegador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    gap: 60px;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    background-color: #D9FFFC;
+    border-radius: 10vh;
+    border: 1.5px solid black;
+    width: 13%;
+    height: 6vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.navbar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #FFA75B;
+}
+
+.container-maior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 49vh;
+    position: relative;
+    padding: 1%;
+    margin-left: 22vh;
+    margin-bottom: -1vh;
+}
+
+.container-menor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+    text-align: center;
+    background-color: #D9FFFC;
+    padding: 10vh;
+    border-radius: 3vh;
+    border: 2px solid black;
+    position: relative;
+    height: 25%;
+    margin-left: 29vh;
+    margin-top: 6vh;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    font-size: 95%;
+}
+.titulo-c-m {
+    width: 60%;
+    background-color: #00D8C6;
+    font-size: 3.3vh;
+    height: 9vh;
+    position: absolute;
+    top: -50px;
+    border-radius: 2vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    margin-top: 2%;
+    margin-left: 43%;
+    position: absolute;
+    animation: float 5s ease-in-out infinite;
+    width: 43%;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4vh);
+    }
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5vh;
+    margin-top: -3.5vh;
+    margin-bottom: 11vh;
+}
+
+section img {
+    width: 30vh;
+    border-radius: 30vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#img1 {
+    border: 10px solid #FFA75B;
+}
+#img2 {
+    border: 10px solid #FFA1A1;
+}
+#img3 {
+    border: 10px solid #FFA75B;
+}
+#img4 {
+    border: 10px solid #FFA1A1;
+}
+#img5 {
+    border: 10px solid #FFA75B;
+}
+#img6 {
+    border: 10px solid #FFA1A1;
+}
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #FFA1A1;
+    height: 1px;
+    padding: 4%;
+    flex-direction: column;
+}
+footer .social-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+}
+footer .social-icons li {
+    list-style: none;
+}
+footer .social-icons li a {
+    font-size: 2.5em;
+    color: #D9FFFC;
+    display: inline-block;
+    margin: 0 1vh;
+    transition: transform 0.3 ease;
+}
+footer .social-icons li a:hover{
+    transform: scale(1.5);
+    color: #00D8C6;
+}
+footer p {
+    color: #D9FFFC;
+    text-align: center;
+    margin: 1vh;
+    font-size: 2.1vh;
+    font-family: monospace;
+}
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(assets/onda1.png);
+    background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+    z-index: 1000;
+opacity: 1;
+bottom: 0;
+animation: animarOnda 4s linear infinite;
+}
+footer .wave#wave2 {
+    z-index: 999;
+opacity: 1;
+bottom: 0;
+animation: animarOnda-02 4s linear infinite;
+}
+footer .wave#wave3 {
+    z-index: 1000;
+opacity: 0.2;
+bottom: 15px;
+animation: animarOnda-02 3s linear infinite;
+}
+footer .wave#wave4 {
+    z-index: 999;
+opacity: 0.3;
+bottom: 20px;
+animation: animarOnda-02 3s linear infinite;
+}
+@keyframes animarOnda {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+@keyframes animarOnda-02 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
