@@ -72,6 +72,12 @@ header {
     transform: scale(1.1);
     cursor: pointer;
 }
+a {
+    text-decoration: none;
+}
+.navbar a {
+    color: black;
+}
 @keyframes animacaoHome {
     0% {
         background-position: 0% 50%;
@@ -91,7 +97,6 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 0;
     gap: 60px;
     width: 100%;
 }
@@ -106,6 +111,9 @@ header {
     text-align: center;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    position: relative;
+    margin: 0 20px;
 }
 .navbar:hover {
     cursor: pointer;
