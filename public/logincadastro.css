@@ -209,13 +209,6 @@ input:focus {
     z-index: -1;
 }
 
-.esquecersenha {
-    color: #FFA1A1;
-    text-align: center;
-    font-size: 1.5vh;
-    font-weight: bold;
-}
-
 .descricao-x {
     margin-top: -2vh;
 }

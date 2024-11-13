@@ -139,7 +139,9 @@ a {
     margin-left: 22vh;
     margin-bottom: -1vh;
 }
-
+.titulomaior {
+    font-size: 3vh;
+}
 .container-menor {
     display: flex;
     flex-direction: column;
@@ -156,7 +158,7 @@ a {
     margin-left: 33vh;
     margin-top: 6vh;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 .titulo-c-m {
     width: 60%;
@@ -170,6 +172,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: -3vh;
 }
 
 .img1 {
