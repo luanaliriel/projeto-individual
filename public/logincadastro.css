@@ -7,29 +7,40 @@
 }
 
 body {
-    background: radial-gradient(circle, #FFA75B, #00D8C6, #FFA1A1);
+    background: radial-gradient(circle, #FFA1A1, #FFA1A1, #e09451, #FFA1A1);
     font-family: "Inter", serif;
-}
 
+}
+#botaohome {
+    width: 16%;
+    position: absolute;
+    margin-left: 93vh;
+    margin-top: 2vh;
+}
+#botaohome:hover {
+    transform: scale(1.2);
+}
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 
 .conteudo {
     border-radius: 80px;
-    background: #D9FFFC;
+    background-image: url(assets/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 54%;
     height: 65%;
     justify-content: space-between;
     align-items: center;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
 
+}
+/* aqui eu crio um pseudoelemento que é na verdade o fundo liso que vai rolar pro outro lado */
 .conteudo::before {
     content: "";
     position: absolute;
@@ -37,7 +48,6 @@ body {
     width: 40%;
     height: 100%;
     border-radius: 80px;
-
     left: 0%;
 }
 
@@ -45,6 +55,7 @@ body {
     color: white;
     font-size: 28px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .titulo-criar-conta {
@@ -122,11 +133,11 @@ body {
 .conteudo-cadastro {
     display: flex;
 }
-
+/* define uma ordem de empilhamento ou camadas. o 11 significa que ele está acima de qualquer outro com valor menor */
 .conteudo-cadastro .segunda-coluna {
     z-index: 11;
 }
-
+/* aqui é a coluna que será sobreposta */
 .primeira-coluna {
     text-align: center;
     width: 40%;
@@ -138,40 +149,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.social-media {
-    margin: 1rem 0;
-}
-
-.lista-social-media {
-    display: flex;
-    list-style-type: none;
-}
-
-.item-social-media {
-    border: 1px solid #FFA75B;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-}
-
-.item-social-media:hover {
-    background-color: #FFA75B;
-}
-
-.item-social-media a:hover {
-    color: white;
-}
-
-.item-social-media:not(:first-child) {
-    margin-left: 10px;
-}
-
-.item-social-media a {
-    color: #FFA75B;
 }
 
 .form {
@@ -194,7 +171,7 @@ body {
     color: #FFA75B;
     font-weight: bold;
 }
-
+/* removo o contorno padrao que fica em volta do input */
 input:focus {
     outline: none;
 }
@@ -221,7 +198,7 @@ input:focus {
     position: absolute;
     display: flex;
 }
-
+/* aqui volto a usar z index pra colocar uma coluna por cima da outra e defino a ordem que ele vai ser exibido*/
 .conteudo-login .primeira-coluna {
     order: 2;
     z-index: -1;
@@ -235,7 +212,7 @@ input:focus {
 .esquecersenha {
     color: #FFA1A1;
     text-align: center;
-    font-size: 2vh;
+    font-size: 1.5vh;
     font-weight: bold;
 }
 
@@ -243,10 +220,18 @@ input:focus {
     margin-top: -2vh;
 }
 
+/* quando a classe é ativada a primeira coluna do cadastro é enviada pra trás */
 .sign-in-js .conteudo-cadastro .primeira-coluna {
     z-index: -1;
 }
+/* e a segunda coluna é trazida pra frente */
+.sign-up-js .conteudo-cadastro .segunda-coluna {
+    z-index: 11;
+}
 
+
+
+/* logar: coluna é trazida para frente */
 .sign-in-js .conteudo-login .segunda-coluna {
     z-index: 11;
 }
@@ -255,25 +240,31 @@ input:focus {
     z-index: 13;
 }
 
+
+
+
 .sign-in-js .conteudo::before {
     left: 60%;
     animation: slidein 3s;
     z-index: 12;
 }
+.sign-up-js .conteudo::before {
+    animation: slideout 3s;
+    z-index: 12;
+}
 
+
+.sign-up-js .conteudo-login .segunda-coluna {
+    position: relative;
+    z-index: -1;
+}
 .sign-up-js .conteudo-login .primeira-coluna,
 .sign-up-js .conteudo-login .segunda-coluna {
     z-index: -1;
 }
 
-.sign-up-js .conteudo-cadastro .segunda-coluna {
-    z-index: 11;
-}
 
-.sign-up-js .conteudo::before {
-    animation: slideout 3s;
-    z-index: 12;
-}
+
 
 .sign-up-js .conteudo-cadastro .primeira-coluna {
     z-index: 13;
@@ -282,57 +273,12 @@ input:focus {
 .sign-in-js .conteudo-cadastro .segunda-coluna {
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 3s;
 }
 
-.sign-up-js .conteudo-login .segunda-coluna {
-    position: relative;
-    z-index: -1;
-    animation:  deslocamentoDir 3s;
-}
 
-/* ANIMAÇÃO PARA DESLOCAR  */
-@keyframes deslocamentoEsq {
-    from {
-        left: 0;
-        opacity: 1;
-        z-index: 12;
-    }
-    25% {
-        left: -80px;
-        opacity: 0;
-    }
-    50% {
-        left: -100px;
-        opacity: 0;
-    }
-    to {
-        left: -110px;
-        opacity: 0;
-        z-index: -1;
-    }
-}
-@keyframes deslocamentoDir {
-    from {
-        left: 0;
-        z-index: 12;
-    }
-    25% {
-        left: 80px;
-        opacity: 0;
-    }
-    50% {
-        left: -100px;
-        opacity: 0;
-    }
-    to {
-        left: 110px;
-        z-index: -1;
-        opacity: 0;
-    }
-}
 
-/* ANIMAÇÃO  */
+
+/* animação que faz o fundo rosa se arrastar pro lado */
 
 @keyframes slidein {
     from {
@@ -355,5 +301,95 @@ input:focus {
     to {
         left: 0%;
         width: 40%;
+    }
+}
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #FFA1A1;
+    height: 1px;
+    padding: 4%;
+    flex-direction: column;
+}
+footer .social-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+}
+footer .social-icons li {
+    list-style: none;
+}
+footer .social-icons li a {
+    font-size: 2.5em;
+    color: #D9FFFC;
+    display: inline-block;
+    margin: 0 1vh;
+    transition: transform 0.3 ease;
+}
+footer .social-icons li a:hover{
+    transform: scale(1.5);
+    color: #00D8C6;
+}
+footer p {
+    color: #D9FFFC;
+    text-align: center;
+    margin: 1vh;
+    font-size: 2.1vh;
+    font-family: monospace;
+    font-weight: bold;
+}
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(assets/onda1.png);
+    background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+    z-index: 1000;
+opacity: 1;
+bottom: 0;
+animation: animarOnda 4s linear infinite;
+}
+footer .wave#wave2 {
+    z-index: 999;
+opacity: 1;
+bottom: 0;
+animation: animarOnda-02 4s linear infinite;
+}
+footer .wave#wave3 {
+    z-index: 1000;
+opacity: 0.2;
+bottom: 15px;
+animation: animarOnda-02 3s linear infinite;
+}
+footer .wave#wave4 {
+    z-index: 999;
+opacity: 0.3;
+bottom: 20px;
+animation: animarOnda-02 3s linear infinite;
+}
+@keyframes animarOnda {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+@keyframes animarOnda-02 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
     }
 }

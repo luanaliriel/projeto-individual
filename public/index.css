@@ -6,7 +6,9 @@
 html { 
     margin: 0;
     padding: 0;
+    
 }
+
 body {
     background: radial-gradient(circle, #FFA1A1, #FFA1A1, #e09451, #FFA1A1);
     font-family: "Inter", serif;
@@ -17,6 +19,7 @@ body {
     flex-direction: column;
     min-width: 100%;
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -68,6 +71,9 @@ header {
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+a:visited {
+    color: black;
+}
 .home:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -77,6 +83,7 @@ a {
 }
 .navbar a {
     color: black;
+    
 }
 @keyframes animacaoHome {
     0% {
@@ -112,8 +119,8 @@ a {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    position: relative;
     margin: 0 20px;
+    position: relative;
 }
 .navbar:hover {
     cursor: pointer;
@@ -146,7 +153,7 @@ a {
     border: 2px solid black;
     position: relative;
     height: 25%;
-    margin-left: 29vh;
+    margin-left: 33vh;
     margin-top: 6vh;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
     font-size: 95%;
@@ -167,10 +174,10 @@ a {
 
 .img1 {
     margin-top: 2%;
-    margin-left: 43%;
+    margin-left: 53%;
     position: absolute;
     animation: float 5s ease-in-out infinite;
-    width: 43%;
+    width: 26%;
 }
 
 @keyframes float {

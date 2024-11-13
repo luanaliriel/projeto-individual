@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <script src="https://kit.fontawesome.com/a2c653daa5.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
-
-
+    <a href="index.html"><img src="assets/home.png" id="botaohome"></a>
+    
     <div class="container">
-        <!-- AQUI TEM A TRANSIÇÃO PARA LOGIN DO LADO ESQUERDO E TELA DE CADASTRO DO LADO DIREITO  -->
+        <!-- AQUI TEM A TRANSIÇÃO PARA LOGIN  -->
         <div class="conteudo conteudo-cadastro">
             <div class="primeira-coluna">
                 <h2 class="titulo titulo-bem-vindo">Seja bem vinda(o)!</h2>
@@ -19,64 +21,51 @@
                 <button id=signin class="botao botaoLogar" onclick="fazerLogin()">Logar</button>
             </div>
 
-
+            <!-- AQUI TEM TELA DE CADASTRO DO LADO DIREITO -->
             <div class="segunda-coluna">
                 <h2 class="titulo titulo-criar-conta">Criar conta</h2>
-                <div class="social-media">
-                    <ul class="lista-social-media">
-                        <li class="item-social-media"><a href="#"><i class="fa-brands fa-google"></i></a></li>
-                        <li class="item-social-media"><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-                    </ul>
-                </div>
                 <p class="descricao descricao-dois descricao-x">ou utilize seu e-mail para se registrar:</p>
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="fa-solid fa-user mudar-icon"></i>
-                    <input type="text" placeholder="Insira aqui seu nome">    
+                        <input type="text" placeholder="Insira aqui seu nome">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fa-solid fa-envelope mudar-icon"></i>
-                    <input type="email" placeholder="Insira aqui seu email">    
+                        <input type="email" placeholder="Insira aqui seu email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock mudar-icon"></i>
-                    <input type="password"placeholder="Insira aqui sua senha">    
+                        <input type="password" placeholder="Insira aqui sua senha">
                     </label>
-                
+
                     <button class="botao botaoCadastrar" onclick="fazerCadastro()">Cadastrar</button>
                 </form>
             </div>
-        </div>  
+        </div>
 
 
-        
-        <!-- AQUI TEM A TELA DE LOGIN DO LADO ESQUERDO E A TELA DE TRANSIÇÃO PARA CADASTRO NO LADO DIREITO -->
+        <!-- TELA DE TRANSIÇÃO PARA CADASTRO NO LADO DIREITO -->
         <div class="conteudo conteudo-login">
             <div class="primeira-coluna">
                 <h2 class="titulo titulo-bem-vindo">Olá, amigo!</h2>
                 <p class="descricao descricao-um descricao-fazer-cadastro">Faça seu cadastro aqui!</p>
-                <button  id="signup"  class="botao botaoLogar" onclick="fazerCadastro()">Cadastrar</button>
+                <button id="signup" class="botao botaoLogar" onclick="fazerCadastro()">Cadastrar</button>
             </div>
 
-
+            <!-- AQUI TEM A TELA DE LOGIN  -->
             <div class="segunda-coluna">
                 <h2 class="titulo titulo-criar-conta">Fazer o login</h2>
-                <div class="social-media">
-                    <ul class="lista-social-media">
-                        <li class="item-social-media"><a href="#"><i class="fa-brands fa-google"></i></a></li>
-                        <li class="item-social-media"><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-                    </ul>
-                </div>
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="fa-solid fa-envelope mudar-icon"></i>
-                    <input type="email" placeholder="Insira aqui seu email">    
+                        <input type="email" placeholder="Insira aqui seu email">
                     </label>
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock mudar-icon"></i>
-                    <input type="password"placeholder="Insira aqui sua senha">    
+                        <input type="password" placeholder="Insira aqui sua senha">
                     </label>
                     <a class=esquecersenha href="#">Esqueceu sua senha?</a>
                     <button class="botao botaoLogarDois" onclick="fazerLogin()">Logar</button>
@@ -85,5 +74,26 @@
         </div>
     </div>
     <script src="logincadastro.js"></script>
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icons">
+            <li>
+                <a href="https://github.com/luanaliriel"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/luanaliriel"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-at"></i></a>
+            </li>
+        </ul>
+        <p>Criado com muito amor por Luana Liriel <i class="fa-solid fa-hand-holding-heart"></i></p>
+    </footer>
 </body>
+
 </html>
