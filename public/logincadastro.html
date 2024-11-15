@@ -1,78 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="logincadastro.css">
-    <script src="https://kit.fontawesome.com/a2c653daa5.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Login/Cadastro</title>
 </head>
-
 <body>
-    <a href="index.html"><img src="assets/home.png" id="botaohome"></a>
-    
-    <div class="container">
-        <!-- AQUI TEM A TRANSIÇÃO PARA LOGIN  -->
-        <div class="conteudo conteudo-cadastro">
-            <div class="primeira-coluna">
-                <h2 class="titulo titulo-bem-vindo">Seja bem vinda(o)!</h2>
-                <p class="descricao descricao-um">Já tem uma conta?</p>
-                <button id=signin class="botao botaoLogar" onclick="fazerLogin()">Logar</button>
-            </div>
 
-            <!-- AQUI TEM TELA DE CADASTRO DO LADO DIREITO -->
-            <div class="segunda-coluna">
-                <h2 class="titulo titulo-criar-conta">Criar conta</h2>
-                <p class="descricao descricao-dois descricao-x">ou utilize seu e-mail para se registrar:</p>
-                <form class="form">
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-user mudar-icon"></i>
-                        <input type="text" placeholder="Insira aqui seu nome">
-                    </label>
-
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-envelope mudar-icon"></i>
-                        <input type="email" placeholder="Insira aqui seu email">
-                    </label>
-
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-lock mudar-icon"></i>
-                        <input type="password" placeholder="Insira aqui sua senha">
-                    </label>
-
-                    <button class="botao botaoCadastrar" onclick="fazerCadastro()">Cadastrar</button>
-                </form>
-            </div>
+<a href="index.html"><img src="assets/botaohome.png" id="botaoHome"></a>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Criar conta</h1>
+                <span>Use seu e-mail para se registrar!</span>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="E-mail">
+                <input type="password" placeholder="Senha">
+                <button>Cadastrar</button>
+            </form>
         </div>
-
-
-        <!-- TELA DE TRANSIÇÃO PARA CADASTRO NO LADO DIREITO -->
-        <div class="conteudo conteudo-login">
-            <div class="primeira-coluna">
-                <h2 class="titulo titulo-bem-vindo">Olá, querido visitante!</h2>
-                <p class="descricao descricao-um descricao-fazer-cadastro">Faça seu cadastro aqui!</p>
-                <button id="signup" class="botao botaoLogar" onclick="fazerCadastro()">Cadastrar</button>
-            </div>
-
-            <!-- AQUI TEM A TELA DE LOGIN  -->
-            <div class="segunda-coluna">
-                <h2 class="titulo titulo-criar-conta">Fazer o login</h2>
-                <form class="form">
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-envelope mudar-icon"></i>
-                        <input type="email" placeholder="Insira aqui seu email">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-lock mudar-icon"></i>
-                        <input type="password" placeholder="Insira aqui sua senha">
-                    </label>
-                    <button class="botao botaoLogarDois" onclick="fazerLogin()">Logar</button>
-                </form>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Logar conta</h1>
+                <span>Use seu e-mail e senha</span>
+                <input type="email" placeholder="E-mail">
+                <input type="password" placeholder="Senha">
+                <button>Logar</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Seja bem-vindo!</h1>
+                    <p>Preencha seus dados para ter acesso à todas as áreas do site!</p>
+                    <button class="hidden" id="login">Logar</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Olá, querido visitante!</h1>
+                    <p>Registre seus dados para ter acesso à todas as áreas do site!</p>
+                    <button class="hidden" id="registrar">Cadastrar</button>
+                </div>
             </div>
         </div>
     </div>
-    <script src="logincadastro.js"></script>
     <footer>
         <div class="waves">
             <div class="wave" id="wave1"></div>
@@ -93,6 +66,6 @@
         </ul>
         <p>Criado com muito amor por Luana Liriel <i class="fa-solid fa-hand-holding-heart"></i></p>
     </footer>
+    <script src="logincadastro.js"></script>
 </body>
-
 </html>

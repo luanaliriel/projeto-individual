@@ -1,301 +1,253 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", serif;
 }
 
 body {
     background: radial-gradient(circle, #FFA1A1, #FFA1A1, #e09451, #FFA1A1);
-    font-family: "Inter", serif;
-
-}
-#botaohome {
-    width: 16%;
-    position: absolute;
-    margin-left: 93vh;
-    margin-top: 2vh;
-}
-#botaohome:hover {
-    transform: scale(1.2);
-}
-.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
-.conteudo {
-    border-radius: 80px;
-    background-image: url(assets/fundo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 54%;
-    height: 65%;
-    justify-content: space-between;
-    align-items: center;
+#botaoHome {
+width: 28vh;
+margin-bottom: 3vh;
+margin-top: -20vh;
+}
+
+#botaoHome:hover {
+    transform: scale(1.3);
+}
+
+.container {
+    background-color: #D9FFFC;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-}
-/* aqui eu crio um pseudoelemento que é na verdade o fundo liso que vai rolar pro outro lado */
-.conteudo::before {
-    content: "";
-    position: absolute;
-    background-color: #FFA1A1;
-    width: 40%;
-    height: 100%;
-    border-radius: 80px;
-    left: 0%;
+    /* permite o posicionamento absoluto dos filhos (o que está dentro) */
+    overflow: hidden;
+    /* ocultando partes que saem do container*/
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
 }
 
-.titulo {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.titulo-criar-conta {
-    color: #FFA1A1;
-}
-
-.titulo-bem-vindo {
-    color: white;
-}
-
-.descricao {
+.container p {
     font-size: 14px;
-    font-weight: bold;
-    line-height: 30px;
-    margin-top: -1vh;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
 }
 
-.descricao-um {
-    color: white;
+.container span {
+    font-size: 12px;
 }
 
-.descricao-dois {
-    color: #FFA75B;
-    margin-top: 1vh;
-}
-
-.descricao-fazer-cadastro {
-    margin-top: 2vh;
-}
-
-.botao {
-    border-radius: 15px;
-    color: white;
-    line-height: 30px;
-    padding: 10px 30px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 150px;
-    align-self: center;
-    text-align: center;
-    border: none;
-    margin-top: 1rem;
-    font-size: 3vh;
-}
-
-.botaoLogar {
-    background-color: white;
-    color: #FFA1A1;
-    transition: transform 0.5s ease-in-out;
-}
-
-.botaoLogar:hover {
-    transform: scale(1.1);
-}
-
-.botaoLogarDois {
+.container button {
     background-color: #FFA1A1;
-    transition: transform 0.5s ease-in-out;
+    color: black;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.botaoLogarDois:hover {
-    transform: scale(1.1);
+.container button.hidden {
+    background-color: transparent;
+    border-color: white;
 }
 
-.botaoCadastrar {
-    background-color: #FFA75B;
-    border: 1px solid #FFA75B;
-    transition: transform 0.5s ease-in-out;
-}
-
-.botaoCadastrar:hover {
-    transform: scale(1.1);
-}
-
-.conteudo-cadastro {
+.container form {
+    background-color: #D9FFFC;
     display: flex;
-}
-/* define uma ordem de empilhamento ou camadas. o 11 significa que ele está acima de qualquer outro com valor menor */
-.conteudo-cadastro .segunda-coluna {
-    z-index: 11;
-}
-/* aqui é a coluna que será sobreposta */
-.primeira-coluna {
-    text-align: center;
-    width: 40%;
-    z-index: 10;
-}
-
-.segunda-coluna {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.form {
-    display: flex;
+    justify-content: center;
     flex-direction: column;
-    width: 50%;
+    padding: 0 40px;
+    height: 100%;
 }
 
-.form input {
-    height: 45px;
-    width: 100%;
+.container input {
+    background-color: burlywood;
     border: none;
-    background-color: #ffdbbc;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
     width: 100%;
-    border-radius: 20px;
-    text-align: center;
-}
-
-.form input::placeholder {
-    color: #FFA75B;
-    font-weight: bold;
-}
-/* removo o contorno padrao que fica em volta do input */
-input:focus {
     outline: none;
 }
 
-.label-input {
-    background-color: #ffdbbc;
-    display: flex;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    margin: 8px;
-    border-radius: 20px;
-}
-
-.mudar-icon {
-    color: #FFA75B;
-    padding: 0 15px;
-}
-
-
-
-
-.conteudo-login {
+.form-container {
     position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+
+
+
+/* transição começa aqui!!! */
+
+
+/* 1. aqui eu estou posicionando o elemento do lado esquerdo do elemento pai*/
+/* 2. aqui eu estou definindo o espaço que a tela de login vai tomar em relação ao container (50% de 100%) */
+/* 3. aqui eu estou colocando essa camada acima da camada sign up que tem z index menor */
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+/* isso é um seletor css combinado.
+isso só acontece quando a classe active é adicionada ao container. */
+.container.active .sign-in {
+    /* o translateX (eixo horizontal) move esse espaço totalmente para o lado direito >> */
+    transform: translateX(100%);
+}
+
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    /* o opacity aqui serve pra colocar esse elemento INICIALMENTE como invisível antes de qualquer interação (cadastro é a segunda tela)*/
+    opacity: 0;
+    /* o z index é 1, menor que o do sign in, então ele fica escondido inicialmente */
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: moverContainer 0.6s;
+}
+
+@keyframes moverContainer {
+
+    /* do 0 ao 49% do tempo dessa animação o container vai estar escondido */
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+
+
+/* o toggle container é o elemento que permite a transição entre as duas telas */
+/* ele fica exatamente no meio da tela */
+.toggle-container {
+    /* usa o position relative de outro elemento pra se posicionar */
+    position: absolute;
+    left: 50%;
+    /* o ponto de referência, o inicio é o lado esquerdo*/
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    /* permite que qualquer conteudo que ultrapasse os limites desse container não serão visiveis*/
+    transition: all 0.6s ease-in-out;
+    /* define que todas as propriedades desse container que podem ser animadas serão suavemente animadas em 0.6 segundos, fluida*/
+    border-radius: 150px 0 0 100px;
+    /* ele é colocado na frente dos outros elementos pra sempre ficar visivel durante a animação */
+    z-index: 1000;
+}
+
+
+/* aqui eu defino o comportamento do toggle container que acabei de ajustar quando ele tambem tiver a classe active */
+.container.active .toggle-container {
+    /* move o toggle-container 100% pra esquerda */
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+
+
+/* ESSE É O PLANO DE FUNDO MÓVEL, O GRADIENTE */
+/* aqui eu estou definindo que a classe toggle é um elemento que ocupa 200% da largura do container pai (toggle container) */
+.toggle {
+    background-color: #e09451;
+    height: 100%;
+    background: linear-gradient(to right, #FFA1A1, #e09451);
+    color: white;
+    position: relative;
+    left: -100%;
+    /* ele começa deslocado à esquerda */
+    height: 100%;
+    width: 200%;
+    /* a largura de 200% serve pra quando ele se mover com translateX ele ainda cubra toda a area do container pai*/
+    transform: translateX(0);
+    /* aqui ele está sendo definido assim zerado para preparar o elemento pra ser movido posteriormente*/
+    transition: all 0.6s ease-in-out;
+}
+
+
+
+
+/* isso significa que quando a classe ACTIVE é adicionada ao container, o TOGGLE vai mover 50% da sua largura pro lado direito */
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+
+/* o elemento onde vão aparecer as informações dentro do container, organizando tudo */
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
     display: flex;
-}
-/* aqui volto a usar z index pra colocar uma coluna por cima da outra e defino a ordem que ele vai ser exibido*/
-.conteudo-login .primeira-coluna {
-    order: 2;
-    z-index: -1;
-}
-
-.conteudo-login .segunda-coluna {
-    order: 1;
-    z-index: -1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
 }
 
-.descricao-x {
-    margin-top: -2vh;
+.toggle-left {
+    transform: translateX(-200%);
+    /* o painel de alternancia da tela de cadastro está sendo jogado pra direita (some)*/
 }
 
-/* quando a classe é ativada a primeira coluna do cadastro é enviada pra trás */
-.sign-in-js .conteudo-cadastro .primeira-coluna {
-    z-index: -1;
-}
-/* e a segunda coluna é trazida pra frente */
-.sign-up-js .conteudo-cadastro .segunda-coluna {
-    z-index: 11;
+.container.active .toggle-left {
+    transform: translateX(0);
+    /* aqui ele volta pra tela na sua posicao original (0) isso é quando vc esta no login e clica pro cadastro*/
 }
 
-
-
-/* logar: coluna é trazida para frente */
-.sign-in-js .conteudo-login .segunda-coluna {
-    z-index: 11;
+.toggle-right {
+    right: 0;
+    /* aqui estou colocando o painel de alternancia da direita na sua posicao original, a direita*/
+    transform: translateX(0);
 }
 
-.sign-in-js .conteudo-login .primeira-coluna {
-    z-index: 13;
+.container.active .toggle-right {
+    transform: translateX(200%);
+    /* quando a classe container ACTIVE é aplicada esse painel ele é movido pra direita, fora da tela */
 }
 
 
 
-
-.sign-in-js .conteudo::before {
-    left: 60%;
-    animation: slidein 3s;
-    z-index: 12;
-}
-.sign-up-js .conteudo::before {
-    animation: slideout 3s;
-    z-index: 12;
-}
-
-
-.sign-up-js .conteudo-login .segunda-coluna {
-    position: relative;
-    z-index: -1;
-}
-.sign-up-js .conteudo-login .primeira-coluna,
-.sign-up-js .conteudo-login .segunda-coluna {
-    z-index: -1;
-}
-
-
-
-
-.sign-up-js .conteudo-cadastro .primeira-coluna {
-    z-index: 13;
-}
-
-.sign-in-js .conteudo-cadastro .segunda-coluna {
-    z-index: -1;
-    position: relative;
-}
-
-
-
-
-/* animação que faz o fundo rosa se arrastar pro lado */
-
-@keyframes slidein {
-    from {
-        left: 0;
-        width: 40%;
-    }
-
-    to {
-        left: 60%;
-        width: 40%;
-    }
-}
-
-@keyframes slideout {
-    from {
-        left: 60%;
-        width: 40%;
-    }
-
-    to {
-        left: 0%;
-        width: 40%;
-    }
-}
 footer {
     position: relative;
     display: flex;
@@ -303,10 +255,13 @@ footer {
     align-items: center;
     width: 100%;
     background: #FFA1A1;
-    height: 1px;
-    padding: 4%;
     flex-direction: column;
+    height: 14%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2000;
 }
+
 footer .social-icons {
     position: relative;
     display: flex;
@@ -315,9 +270,11 @@ footer .social-icons {
     margin: 5px 0;
     flex-wrap: wrap;
 }
+
 footer .social-icons li {
     list-style: none;
 }
+
 footer .social-icons li a {
     font-size: 2.5em;
     color: #D9FFFC;
@@ -325,10 +282,12 @@ footer .social-icons li a {
     margin: 0 1vh;
     transition: transform 0.3 ease;
 }
-footer .social-icons li a:hover{
+
+footer .social-icons li a:hover {
     transform: scale(1.5);
     color: #00D8C6;
 }
+
 footer p {
     color: #D9FFFC;
     text-align: center;
@@ -337,6 +296,7 @@ footer p {
     font-family: monospace;
     font-weight: bold;
 }
+
 footer .wave {
     position: absolute;
     top: -100px;
@@ -346,42 +306,50 @@ footer .wave {
     background: url(assets/onda1.png);
     background-size: 1000px 100px;
 }
+
 footer .wave#wave1 {
     z-index: 1000;
-opacity: 1;
-bottom: 0;
-animation: animarOnda 4s linear infinite;
+    opacity: 1;
+    bottom: 0;
+    animation: animarOnda 4s linear infinite;
 }
+
 footer .wave#wave2 {
     z-index: 999;
-opacity: 1;
-bottom: 0;
-animation: animarOnda-02 4s linear infinite;
+    opacity: 1;
+    bottom: 0;
+    animation: animarOnda-02 4s linear infinite;
 }
+
 footer .wave#wave3 {
     z-index: 1000;
-opacity: 0.2;
-bottom: 15px;
-animation: animarOnda-02 3s linear infinite;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animarOnda-02 3s linear infinite;
 }
+
 footer .wave#wave4 {
     z-index: 999;
-opacity: 0.3;
-bottom: 20px;
-animation: animarOnda-02 3s linear infinite;
+    opacity: 0.3;
+    bottom: 20px;
+    animation: animarOnda-02 3s linear infinite;
 }
+
 @keyframes animarOnda {
     0% {
         background-position-x: 1000px;
     }
+
     100% {
         background-position-x: 0px;
     }
 }
+
 @keyframes animarOnda-02 {
     0% {
         background-position-x: 0px;
     }
+
     100% {
         background-position-x: 1000px;
     }
