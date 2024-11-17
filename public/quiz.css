@@ -162,6 +162,11 @@ a {
 }
 
 
+h1 {
+    margin-bottom: 15px;
+}
+
+
 #img1 {
     height: 85%;
     border-radius: 50px;
@@ -170,16 +175,11 @@ a {
 }
 
 #container-introducao {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     color: #D9FFFC;
     background-color: #e09451;
     padding: 3vh;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    /* margin-top: 2vh; */
     width: auto;
     height: auto;
     border: 10px solid #d9fffc;
@@ -203,7 +203,7 @@ a {
     color: #00a496;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     font-size: 2.1vh;
-    margin-top: vh;
+    margin-top: 2vh;
 }
 
 #botao-comecar:hover {
@@ -214,4 +214,45 @@ a {
 
 #quiz {
     transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.option {
+    background-color: #09b7a8;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.option:hover {
+    background-color: #FFA1A1;
+    transform: scale(1.1);
+}
+
+#pergunta {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+#resultado {
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #000000; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+}
+
+
+#descricao-personagem {
+    color: #555;
+}
+
+#resultado-coluna {
+    text-align: center;
 }

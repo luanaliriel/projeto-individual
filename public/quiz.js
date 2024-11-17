@@ -5,6 +5,7 @@ const pergunta = document.getElementById('pergunta')
 const imagem = document.getElementById('img1')
 const containerDeOpcoes = document.getElementById('opcoes')
 const resultadoTexto = document.getElementById('resultado')
+const descricaoTexto = document.getElementById('descricao-personagem')
 
 const questoes = [
     {
@@ -109,15 +110,19 @@ function mostrarResultado() {
 
     if (pontuacao.A > pontuacao.B) {
         resultado = "Você se parece mais com o Seiji!"
+        descricao = "Seiji é um personagem reservado, disciplinado, ambicioso e maduro. Ele prefere trabalhar duro e sozinho em silêncio, mas tem um grande coração.";
         imagem.src = "assets/img/seiji.jpg"
     } else if (pontuacao.B > pontuacao.A) {
         resultado = "Você se parece mais com a Shizuku!"
+        descricao = "Shizuku é muito curiosa, criativa, sonhadora e determinada. Está sempre em busca de novas experiências, idéias e possibilidades, buscando entender mais a si mesma.";
         imagem.src = "assets/img/shizuku.jpg"
     } else {
         resultado = "Você é uma mistura entre a Shizuku e o Seiji!"
+        descricao = "Você equilibra características de ambos, sendo tanto dedicado e disciplinado quanto criativo e curioso. Você tem o melhor dos dois mundos!";
         imagem.src = "assets/img/final.jpg"
     }
 
+    descricaoTexto.textContent = descricao
     resultadoTexto.textContent = resultado
     resultadoTexto.classList.remove('hidden')
 
