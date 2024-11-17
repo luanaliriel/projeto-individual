@@ -11,37 +11,37 @@ const questoes = [
     {
         imagemQuestao: 'assets/img/ptg.quiz.webp',
         question: 'Como você lida com seus sonhos?',
-        options: ['(A) Estou sempre buscando maneiras de realizá-los, mesmo que aos poucos.', '(B) Gosto de sonhar alto, mas prefiro explorar e descobrir ao longo do caminho']
+        options: ['(A) Estou sempre buscando maneiras de realizá-los, tenho muita disciplina e foco.', '(B) Gosto de sonhar alto, mas prefiro explorar e descobrir ao longo do caminho']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz2.webp',
         question: 'O que você prefere em seu tempo livre?',
-        options: ['(A) Trabalhar em algo que amo e me deixa mais próximo do que quero.', '(B) Ler, escrever ou explorar novas ideias criativas.']
+        options: ['(A) Trabalhar em algo que amo e me deixa mais próximo dos meus objetivos.', '(B) Explorar novas ideias para desestressar, sem focar em trabalho ou estudo.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz3.webp',
         question: 'Como você reage ao conhecer novas pessoas?',
-        options: ['(A) Sou reservado, mas demonstro interesse aos poucos.', '(B) Sou aberto(a) e gosto de criar conexões rapidamente.']
+        options: ['(A) Sou reservado, demonstro interesse aos poucos.', '(B) Sou aberto(a) e gosto de criar conexões rapidamente.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz4.webp',
         question: 'Como você expressa seus sentimentos?',
-        options: ['(A) Tenho dificuldade em expressá-los, prefiro mostrar com ações.', '(B) Sou direto(a) e não tenho medo de falar o que sinto.']
+        options: ['(A) Tenho dificuldade em expressá-los, isso leva tempo.', '(B) Sou direto(a) e não tenho medo de falar o que sinto.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz5.webp',
         question: 'Como você lida com críticas?',
-        options: ['(A) Fico um pouco abalado, mas uso isso como motivação.', '(B) Tento absorver e aprender com elas, mesmo que machuque.']
+        options: ['(A) Gosto de críticas, é assim que consigo crescer enquanto ser humano.', '(B) Minha primeira reação costuma ser mais defensiva.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz6.webp',
         question: 'Qual destas frases combina mais com você?',
-        options: ['(A) Prefiro demonstrar meu potencial trabalhando em silêncio.', '(B) Adoro descobrir algo novo a cada dia.']
+        options: ['(A) Prefiro demonstrar meu potencial trabalhando em uma só coisa, em silêncio.', '(B) Adoro descobrir algo novo a cada dia.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz7.webp',
         question: 'Você prefere trabalhar em equipe ou sozinho(a)?',
-        options: ['(A) Sozinho(a), mas aprecio o apoio das pessoas que amo.', '(B) Gosto de estar com pessoas que compartilhem minhas ideias.']
+        options: ['(A) Sozinho(a), me sinto mais confortável assim.', '(B) Gosto de estar com pessoas, principalmente as que compartilhem minhas ideias.']
     },
     {
         imagemQuestao: 'assets/img/ptg.quiz8.webp',
