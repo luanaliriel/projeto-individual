@@ -65,8 +65,7 @@ body {
 }
 
 .container button.hidden {
-    background-color: transparent;
-    border-color: white;
+    background-color: #D9FFFC;
 }
 
 .container form {
@@ -269,7 +268,7 @@ footer {
     width: 100%;
     background: #FFA1A1;
     flex-direction: column;
-    height: 14%;
+    height: 16%;
     position: fixed;
     bottom: 0;
     z-index: 2000;
@@ -315,7 +314,7 @@ footer .wave {
     left: 0;
     width: 100%;
     height: 100px;
-    background: url(assets/onda1.png);
+    background: url(assets/img/onda1.png);
     background-size: 1000px 100px;
 }
 
