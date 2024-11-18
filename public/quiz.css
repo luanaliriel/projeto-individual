@@ -256,3 +256,18 @@ h1 {
 #resultado-coluna {
     text-align: center;
 }
+
+#botaoDash {
+    width: 45%;
+    height: 5vh;
+    margin-top: 2vh;
+    font-weight: bold;
+    background-color: #ffbc6d;
+    border: none;
+    border-radius: 1vh;
+}
+
+#botaoDash:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

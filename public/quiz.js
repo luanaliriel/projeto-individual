@@ -104,7 +104,6 @@ function processarResposta(option) {
 }
 
 function mostrarResultado() {
-    // var resultado = pontuacao.A > pontuacao.B ? 'Você se parece mais com o Seiji!' : pontuacao.B > pontuacao.A ? 'Você se parece mais com o Shizuku!' : 'Você é uma mistura entre a Shizuku e o Seiji!'
 
     var resultado = ``
 
@@ -125,7 +124,13 @@ function mostrarResultado() {
     descricaoTexto.textContent = descricao
     resultadoTexto.textContent = resultado
     resultadoTexto.classList.remove('hidden')
-
     telaQuiz.classList.add('hidden')
+
+    var botaoDashboard = document.getElementById('botaoDash')
+    botaoDashboard.classList.remove('hidden')
+
+    botaoDashboard.addEventListener('click', function() {
+        window.location.href = 'dash.html'
+    })
 }
 
