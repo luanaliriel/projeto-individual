@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="css/dash.css">
     <script src="https://kit.fontawesome.com/a2c653daa5.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
@@ -21,7 +21,9 @@
             </div>
 
             <div class="bloco-2">
-                <h2>Olá, <span id="nome_usuario"><span>Fulano!</span></span></h2>
+                <h2>Olá, <span id="nomeUsuario"></span></h2>
+                <h3>Idade: <span id="idadeUsuario"></span></h3>
+                <h3>Gênero: <span id="generoUsuario"></span></h3>
             </div>
 
             <div class="bloco-3">
@@ -29,8 +31,8 @@
                     <h2>Gráficos</h2>
                 </div>
                 <div class="btn-logout" onclick="limparSessao()">
-                    <a href="index.html">
-                        <h2>Voltar para a home</h2>
+                    <a onclick="sairDaSessao()">
+                        <h2>Sair da sessão</h2>
                     </a>
                 </div>
             </div>
@@ -85,7 +87,7 @@
 
 
 
-    <script src="dash.js"></script>
+    <script src="js/dash.js"></script>
 </body>
 
 </html>

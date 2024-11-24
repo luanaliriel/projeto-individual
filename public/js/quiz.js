@@ -129,7 +129,7 @@ function mostrarResultado() {
     var botaoDashboard = document.getElementById('botaoDash')
     botaoDashboard.classList.remove('hidden')
 
-    botaoDashboard.addEventListener('click', function() {
+    botaoDashboard.addEventListener('click', function () {
         window.location.href = 'dash.html'
     })
 }

@@ -5,53 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="logincadastro.css">
+    <link rel="stylesheet" href="css/logincadastro.css">
     <title>Login/Cadastro</title>
 </head>
+
 <body>
 
-<a href="index.html"><img src="assets/img/botaohome.png" id="botaoHome"></a>
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Criar conta</h1>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
-                <input type="number" placeholder="Idade">
-                <select id="select-genero">
-                    <option value="" disabled selected >Gênero</option>
-                    <option value="">Feminino</option>
-                    <option value="">Masculino</option>
-                    <option value="">Não-binário</option>
-                </select>
-                <button>Cadastrar</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Logar conta</h1>
-                <span>Use seu e-mail e senha</span>
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
-                <button>Logar</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Seja bem-vindo!</h1>
-                    <p>Preencha seus dados para ter acesso à todas as áreas do site!</p>
-                    <button class="hidden" id="login">Logar</button>
+    <a href="index.html"><img src="assets/img/botaohome.png" id="botaoHome"></a>
+
+
+    <div class="conteudo">
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <div class="form">
+                    <h1>Criar conta</h1>
+                    <input type="text" placeholder="Nome" id="nomeUsuario">
+                    <input type="email" placeholder="E-mail" id="emailUsuario">
+                    <input type="password" placeholder="Senha" id="senhaUsuario">
+                    <input type="number" placeholder="Idade" id="idadeUsuario">
+                    <select id="generoUsuario">
+                        <option value="" disabled selected>Gênero</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                    <button onclick="cadastrar()">Cadastrar</button>
                 </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Olá, querido visitante!</h1>
-                    <p>Registre seus dados para ter acesso à todas as áreas do site!</p>
-                    <button class="hidden" id="registrar">Cadastrar</button>
+            </div>
+            <div class="form-container sign-in">
+                <div class="form">
+                    <h1>Logar conta</h1>
+                    <span>Use seu e-mail e senha</span>
+                    <input type="email" placeholder="E-mail" id="emailUsuarioEntrar">
+                    <input type="password" placeholder="Senha" id="senhaUsuarioEntrar">
+                    <button onclick="entrar()">Logar</button>
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Seja bem-vindo!</h1>
+                        <p>Preencha seus dados para ter acesso à todas as áreas do site!</p>
+                        <button class="hidden" id="login">Logar</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Olá, querido visitante!</h1>
+                        <p>Registre seus dados para ter acesso à todas as áreas do site!</p>
+                        <button class="hidden" id="registrar">Cadastrar</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+
     </div>
+
+
     <footer>
         <div class="waves">
             <div class="wave" id="wave1"></div>
@@ -61,10 +74,11 @@
         </div>
         <ul class="social-icons">
             <li>
-                <a href="https://github.com/luanaliriel"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/luanaliriel" target="_blank"><i class="fa-brands fa-github"></i></a>
             </li>
             <li>
-                <a href="https://linkedin.com/in/luanaliriel"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://linkedin.com/in/luanaliriel" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
             </li>
             <li>
                 <a href="#"><i class="fa-solid fa-at"></i></a>
@@ -72,6 +86,7 @@
         </ul>
         <p>Criado com muito amor por Luana Liriel <i class="fa-solid fa-hand-holding-heart"></i></p>
     </footer>
-    <script src="logincadastro.js"></script>
+    <script src="js/logincadastro.js"></script>
 </body>
+
 </html>

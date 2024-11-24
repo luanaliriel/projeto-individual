@@ -1,4 +1,17 @@
 
+
+nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO
+idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
+generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
+
+
+function sairDaSessao() {
+    sessionStorage.clear();
+    setTimeout(() => {
+        window.location = 'index.html';
+    }, '2000');
+}
+
 // GRÁFICO 1 - PREFERENCIA DE PERSONAGEM
 
 
