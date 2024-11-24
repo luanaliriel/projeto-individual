@@ -22,21 +22,6 @@ function autenticar(req, res) {
 
                         res.json(resultadoAutenticar[0])
 
-                        // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                        //     .then((resultadoAquarios) => {
-                        //         if (resultadoAquarios.length > 0) {
-                        //             res.json({
-                        //                 id: resultadoAutenticar[0].id,
-                        //                 email: resultadoAutenticar[0].email,
-                        //                 nome: resultadoAutenticar[0].nome,
-                        //                 senha: resultadoAutenticar[0].senha,
-                        //                 cpf: resultadoAutenticar[0].cpf,
-                        //                 aquarios: resultadoAquarios
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ aquarios: [] });
-                        //         }
-                        //     })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {

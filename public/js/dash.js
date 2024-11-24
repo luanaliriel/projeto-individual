@@ -1,8 +1,10 @@
 
+var listaPersonagens = []
+var listaContagem = []
 
-nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO
-idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
-generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
+
+
+
 
 
 function sairDaSessao() {
@@ -12,18 +14,82 @@ function sairDaSessao() {
     }, '2000');
 }
 
+function carregarRequests() {
+    fetch("/pontuacao/contarTotalParticipantes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log('json')
+                    console.log(json)
+                    valorTotalDeParticipantes.innerHTML = json[0].contagemTotal
+                })
+            } else {
+                console.log(resposta)
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+
+    fetch("/pontuacao/verificarIdentificacaoPersonagem", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log('json')
+                    console.log(json)
+                    identificacaoPorPersonagem.innerHTML = json[0].personagemFinal
+                    for (let index = 0; index < json.length; index++) {
+                        listaPersonagens.push(json[index].personagemFinal)
+                        listaContagem.push(json[index].contagem)
+                    }
+                })
+            } else {
+                console.log(resposta)
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+carregarRequests()
+
+
+
+
+
+
+
+
+nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO
+idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
+generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
+
 // GRÁFICO 1 - PREFERENCIA DE PERSONAGEM
-
-
 const meuchart = document.getElementById('chartJS')
 
 const data = {
-    labels: ['Shizuku', 'Seiji'], /* EIXO X */
+    labels: listaPersonagens, /* EIXO X */
     datasets: [{
         label: `Quantidade`,
-        backgroundColor: [`#00D8C6`, `#D9FFFC`],
+        backgroundColor: [`#00D8C6`, `#D9FFFC`, '#00000'],
         borderColor: 'transparent',
-        data: [40, 60] /* EIXO y */
+        data: listaContagem /* EIXO y */
     },
     ]
 }
@@ -47,32 +113,28 @@ const config = {
     },
 }
 
-const chart = new Chart(meuchart, config)
-
-
-
-
+new Chart(meuchart, config)
 
 // GRÁFICO 2 - PREFERENCIA POR IDADE
 
 const meuchart2 = document.getElementById('chartJS2')
 
 const data2 = {
-    labels: ['Shizuku', 'Seiji'],
+    labels: ['Shizuku', 'Seiji', 'Mistura'],
     datasets: [
         {
-            label: '10 a 19 anos',
-            data: [15, 3],
+            label: '10 a 20 anos',
+            data: [15, 3, 2],
             backgroundColor: '#008802',
         },
         {
-            label: '20-29 anos',
-            data: [9, 4],
+            label: '21-30 anos',
+            data: [9, 4, 2],
             backgroundColor: '#D9FFFC',
         },
         {
             label: '30++ anos',
-            data: [5, 17],
+            data: [5, 17, 10],
             backgroundColor: '#5900c5',
         },
     ]
@@ -120,8 +182,7 @@ const config2 = {
     },
 }
 
-const chart2 = new Chart(meuchart2, config2)
-
+new Chart(meuchart2, config2)
 
 // GRÁFICO 3 - PREFERENCIA POR GÊNERO
 
@@ -194,4 +255,5 @@ const config3 = {
     },
 }
 
-const chart3 = new Chart(meuchart3, config3)
+new Chart(meuchart3, config3)
+

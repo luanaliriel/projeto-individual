@@ -105,17 +105,22 @@ function processarResposta(option) {
 
 function mostrarResultado() {
 
+    var personagem = ``
     var resultado = ``
 
+    console.log(pontuacao.A)
     if (pontuacao.A > pontuacao.B) {
+        personagem = `Seiji`
         resultado = "Você se parece mais com o Seiji!"
         descricao = "Seiji é um personagem reservado, disciplinado, ambicioso e maduro. Ele prefere trabalhar duro e sozinho em silêncio, mas tem um grande coração.";
         imagem.src = "assets/img/seiji.jpg"
     } else if (pontuacao.B > pontuacao.A) {
+        personagem = `Shizuku`
         resultado = "Você se parece mais com a Shizuku!"
         descricao = "Shizuku é muito curiosa, criativa, sonhadora e determinada. Está sempre em busca de novas experiências, idéias e possibilidades, buscando entender mais a si mesma.";
         imagem.src = "assets/img/shizuku.jpg"
     } else {
+        personagem = `Mistura`
         resultado = "Você é uma mistura entre a Shizuku e o Seiji!"
         descricao = "Você equilibra características de ambos, sendo tanto dedicado e disciplinado quanto criativo e curioso. Você tem o melhor dos dois mundos!";
         imagem.src = "assets/img/final.jpg"
@@ -128,6 +133,35 @@ function mostrarResultado() {
 
     var botaoDashboard = document.getElementById('botaoDash')
     botaoDashboard.classList.remove('hidden')
+
+    fetch("/pontuacao/inserirRegistros", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            pontosShizukuServer : pontuacao.B,
+            pontosSeijiServer : pontuacao.A,
+            personagemFinalServer : personagem,
+            fkUsuarioServer : sessionStorage.ID_USUARIO
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            console.log(`Inserção feita com sucesso!`)
+            console.log(resposta.json)
+            // setTimeout(function () {
+            //     window.location = "../dash.html";
+            // }, 1000);
+        } else {
+            console.log(`Inserção não pôde ser realizada...`)
+            console.log(resposta)
+            // setTimeout(function () {
+            //     // window.location = "../quiz.html";
+            // }, 1000);
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
 
     botaoDashboard.addEventListener('click', function () {
         window.location.href = 'dash.html'

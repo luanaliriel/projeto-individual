@@ -106,7 +106,11 @@ function cadastrar() {
 
 
             } else {
-                throw "Houve um erro ao tentar realizar o cadastro!";
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML =
+                    "Houve um erro... verifique os dados inseridos e/ou sua conexão";
+                    setInterval(apagarMensagemErro, 5000)
+                    return false;
             }
         })
         .catch(function (resposta) {
@@ -152,15 +156,36 @@ function entrar() {
                 console.log('printando json')
                 console.log(json)
                 sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.ID_USUARIO = json.idUsuario;
                 sessionStorage.IDADE_USUARIO = json.idade;
                 sessionStorage.GENERO_USUARIO = json.genero;
-                console.log(`Passei pelo session storage`)
-                setTimeout(function () {
-                    window.location = "../dash.html";
-                }, 1000);
+
+                fetch("/pontuacao/verificarRegistros", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        idUsuarioServer: sessionStorage.ID_USUARIO
+                    })
+                }).then(function (resposta) {
+                    if (resposta.ok) {
+                        setTimeout(function () {
+                            window.location = "../dash.html";
+                        }, 1000);
+                    } else {
+                        setTimeout(function () {
+                            window.location = "../quiz.html";
+                        }, 1000);
+                    }
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+
 
             });
+
+            // fora das chaves do then (json) ele não funciona mais, então usamos o sessionStorage
 
         } else {
             console.log("Houve um erro ao tentar realizar o login!");
@@ -178,9 +203,4 @@ function entrar() {
     }).catch(function (erro) {
         console.log(erro);
     })
-
-    return false;
-
-
-
 }
