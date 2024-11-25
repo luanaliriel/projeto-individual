@@ -1,6 +1,7 @@
-
+// gráfico 1
 var listaPersonagens = []
 var listaContagem = []
+
 
 
 
@@ -14,7 +15,7 @@ function sairDaSessao() {
     }, '2000');
 }
 
-function carregarRequests() {
+document.addEventListener("DOMContentLoaded", function carregarRequests() {
     fetch("/pontuacao/contarTotalParticipantes", {
         method: "POST",
         headers: {
@@ -54,10 +55,47 @@ function carregarRequests() {
                     console.log('json')
                     console.log(json)
                     identificacaoPorPersonagem.innerHTML = json[0].personagemFinal
+
                     for (let index = 0; index < json.length; index++) {
                         listaPersonagens.push(json[index].personagemFinal)
                         listaContagem.push(json[index].contagem)
                     }
+                    const meuchart = document.getElementById('chartJS')
+
+                    const data = {
+                        labels: listaPersonagens, /* EIXO X */
+                        datasets: [{
+                            label: `Quantidade`,
+                            backgroundColor: [`#ff35e1`, `#f6e569`, '#D9FFFC'],
+                            borderColor: 'transparent',
+                            data: listaContagem /* EIXO y */
+                        },
+                        ]
+                    }
+
+                    const config = {
+                        type: 'pie',
+                        data: data,
+                        options: {
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold',
+                                            family: 'Poppins'
+                                        },
+                                        color: '#6d6d6d',
+                                    },
+                                },
+                            },
+                        },
+                    }
+
+                    new Chart(meuchart, config)
+
+
+
                 })
             } else {
                 console.log(resposta)
@@ -66,8 +104,6 @@ function carregarRequests() {
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-}
-carregarRequests()
 
 
 
@@ -76,184 +112,153 @@ carregarRequests()
 
 
 
-nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO
-idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
-generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
+    nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO
+    idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
+    generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
 
-// GRÁFICO 1 - PREFERENCIA DE PERSONAGEM
-const meuchart = document.getElementById('chartJS')
+    // GRÁFICO 1 - PREFERENCIA DE PERSONAGEM
 
-const data = {
-    labels: listaPersonagens, /* EIXO X */
-    datasets: [{
-        label: `Quantidade`,
-        backgroundColor: [`#00D8C6`, `#D9FFFC`, '#00000'],
-        borderColor: 'transparent',
-        data: listaContagem /* EIXO y */
-    },
-    ]
-}
 
-const config = {
-    type: 'pie',
-    data: data,
-    options: {
-        plugins: {
-            legend: {
-                labels: {
-                    font: {
-                        size: 14,
-                        weight: 'bold',
-                        family: 'Poppins'
-                    },
-                    color: '#6d6d6d',
-                },
+    // GRÁFICO 2 - PREFERENCIA POR IDADE
+
+    const meuchart2 = document.getElementById('chartJS2')
+
+    const data2 = {
+        labels: ['Shizuku', 'Seiji', 'Mistura'],
+        datasets: [
+            {
+                label: '10 a 20 anos',
+                data: [15, 3, 2],
+                backgroundColor: '#ff35e1',
             },
-        },
-    },
-}
-
-new Chart(meuchart, config)
-
-// GRÁFICO 2 - PREFERENCIA POR IDADE
-
-const meuchart2 = document.getElementById('chartJS2')
-
-const data2 = {
-    labels: ['Shizuku', 'Seiji', 'Mistura'],
-    datasets: [
-        {
-            label: '10 a 20 anos',
-            data: [15, 3, 2],
-            backgroundColor: '#008802',
-        },
-        {
-            label: '21-30 anos',
-            data: [9, 4, 2],
-            backgroundColor: '#D9FFFC',
-        },
-        {
-            label: '30++ anos',
-            data: [5, 17, 10],
-            backgroundColor: '#5900c5',
-        },
-    ]
-};
-
-const config2 = {
-    type: 'bar',
-    data: data2,
-    options: {
-        responsive: true,
-        plugins: {},
-        scales: {
-            x: {
-                stacked: true,
-                ticks: {
-                    font: {
-                        size: 14,
-                        family: 'Poppins',
-                        weight: 'bold',
-                    },
-                    color: '#6d6d6d',
-                },
+            {
+                label: '21-30 anos',
+                data: [9, 4, 2],
+                backgroundColor: '#D9FFFC',
             },
-            y: {
-                stacked: true,
-                title: {
-                    display: true,
-                    text: 'Número de Usuários',
-                    font: {
-                        size: 14,
-                        family: 'Poppins',
-                        weight: 'bold',
+            {
+                label: '30++ anos',
+                data: [5, 17, 10],
+                backgroundColor: '#5900c5',
+            },
+        ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {
+            responsive: true,
+            plugins: {},
+            scales: {
+                x: {
+                    stacked: true,
+                    ticks: {
+                        font: {
+                            size: 14,
+                            family: 'Poppins',
+                            weight: 'bold',
+                        },
+                        color: '#6d6d6d',
                     },
-                    color: '#6d6d6d',
                 },
-                ticks: {
-                    font: {
-                        size: 14,
-                        family: 'Poppins',
-                        weight: 'bold',
+                y: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Número de Usuários',
+                        font: {
+                            size: 14,
+                            family: 'Poppins',
+                            weight: 'bold',
+                        },
+                        color: '#6d6d6d',
+                    },
+                    ticks: {
+                        font: {
+                            size: 14,
+                            family: 'Poppins',
+                            weight: 'bold',
+                        }
                     }
-                }
-            },
-        },
-    },
-}
-
-new Chart(meuchart2, config2)
-
-// GRÁFICO 3 - PREFERENCIA POR GÊNERO
-
-const meuchart3 = document.getElementById('chartJS3');
-
-const data3 = {
-    labels: ['Shizuku', 'Seiji'],
-    datasets: [
-        {
-            label: 'Feminino',
-            data: [40, 20],
-            backgroundColor: '#fffd6c',
-        },
-        {
-            label: 'Masculino',
-            data: [25, 35],
-            backgroundColor: '#0037db',
-        },
-    ]
-};
-
-const config3 = {
-    type: 'bar',
-    data: data3,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {},
-        },
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: 'Personagens',
-                    font: {
-                        size: 14,
-                        weight: 'bold',
-                        family: 'Poppins',
-                    },
-                    color: '#6d6d6d',
-                },
-                ticks: {
-                    font: {
-                        size: 14,
-                        weight: 'bold',
-                        family: 'Poppins',
-                    },
                 },
             },
-            y: {
-                title: {
-                    display: true,
-                    text: 'Número de Usuários',
-                    font: {
-                        size: 14,
-                        family: 'Poppins',
-                        weight: 'bold',
+        },
+    }
+
+    new Chart(meuchart2, config2)
+
+    // GRÁFICO 3 - PREFERENCIA POR GÊNERO
+
+    const meuchart3 = document.getElementById('chartJS3');
+
+    const data3 = {
+        labels: ['Shizuku', 'Seiji'],
+        datasets: [
+            {
+                label: 'Feminino',
+                data: [40, 20],
+                backgroundColor: '#ff35e1',
+            },
+            {
+                label: 'Masculino',
+                data: [25, 35],
+                backgroundColor: '#44dc9c',
+            },
+        ]
+    };
+
+    const config3 = {
+        type: 'bar',
+        data: data3,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {},
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Personagens',
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                            family: 'Poppins',
+                        },
+                        color: '#6d6d6d',
                     },
-                    color: '#6d6d6d',
+                    ticks: {
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                            family: 'Poppins',
+                        },
+                    },
                 },
-                ticks: {
-                    font: {
-                        size: 14,
-                        family: 'Poppins',
-                        weight: 'bold',
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Número de Usuários',
+                        font: {
+                            size: 14,
+                            family: 'Poppins',
+                            weight: 'bold',
+                        },
+                        color: '#6d6d6d',
+                    },
+                    ticks: {
+                        font: {
+                            size: 14,
+                            family: 'Poppins',
+                            weight: 'bold',
+                        }
                     }
-                }
+                },
             },
         },
-    },
-}
+    }
 
-new Chart(meuchart3, config3)
+    new Chart(meuchart3, config3)
 
+});
