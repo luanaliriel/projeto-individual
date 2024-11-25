@@ -1,5 +1,5 @@
 var pontuacaoModel = require("../models/pontuacaoModel");
-// var aquarioModel = require("../models/aquarioModel");
+
 
 
 function verificarRegistrosController(req, res) {

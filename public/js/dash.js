@@ -3,11 +3,6 @@ var listaPersonagens = []
 var listaContagem = []
 
 
-
-
-
-
-
 function sairDaSessao() {
     sessionStorage.clear();
     setTimeout(() => {
@@ -15,7 +10,8 @@ function sairDaSessao() {
     }, '2000');
 }
 
-document.addEventListener("DOMContentLoaded", function carregarRequests() {
+// CONTANDO TOTAL DE PARTICIPANTES
+
     fetch("/pontuacao/contarTotalParticipantes", {
         method: "POST",
         headers: {
@@ -40,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function carregarRequests() {
         });
 
 
+// VERIFICANDO IDENTIFICAÇÃO COM PERSONAGEM
 
     fetch("/pontuacao/verificarIdentificacaoPersonagem", {
         method: "POST",
@@ -116,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function carregarRequests() {
     idadeUsuario.innerHTML += sessionStorage.IDADE_USUARIO
     generoUsuario.innerHTML += sessionStorage.GENERO_USUARIO
 
-    // GRÁFICO 1 - PREFERENCIA DE PERSONAGEM
+
 
 
     // GRÁFICO 2 - PREFERENCIA POR IDADE
@@ -260,5 +257,3 @@ document.addEventListener("DOMContentLoaded", function carregarRequests() {
     }
 
     new Chart(meuchart3, config3)
-
-});
