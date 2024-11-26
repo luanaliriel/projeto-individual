@@ -160,6 +160,11 @@ function entrar() {
                 sessionStorage.IDADE_USUARIO = json.idade;
                 sessionStorage.GENERO_USUARIO = json.genero;
 
+
+
+
+
+
                 fetch("/pontuacao/verificarRegistros", {
                     method: "POST",
                     headers: {
@@ -181,8 +186,6 @@ function entrar() {
                 }).catch(function (erro) {
                     console.log(erro);
                 })
-
-
             });
 
             // fora das chaves do then (json) ele não funciona mais, então usamos o sessionStorage
