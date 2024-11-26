@@ -82,8 +82,8 @@ function carregarQuestao() {
         botaoOpcao.textContent = option
         botaoOpcao.classList.add('option')
         botaoOpcao.addEventListener('click', () => processarResposta(option))
-        containerDeOpcoes.appendChild(botaoOpcao)
-    })
+        containerDeOpcoes.appendChild(botaoOpcao) // insere o botão criado no container de opçoes (variavel onde elas aparecem)
+    }) // sem o appendChild os botoes não seriam exibidos, apenas criados na memória
 }
 
 function processarResposta(option) {
@@ -134,35 +134,32 @@ function mostrarResultado() {
     var botaoDashboard = document.getElementById('botaoDash')
     botaoDashboard.classList.remove('hidden')
 
+    // FETCH PARA INSERIR O RESULTADO DO USUÁRIO NO MEU BANCO
     fetch("/pontuacao/inserirRegistros", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            pontosShizukuServer : pontuacao.B,
-            pontosSeijiServer : pontuacao.A,
-            personagemFinalServer : personagem,
-            fkUsuarioServer : sessionStorage.ID_USUARIO
+            pontosShizukuServer: pontuacao.B,
+            pontosSeijiServer: pontuacao.A,
+            personagemFinalServer: personagem,
+            fkUsuarioServer: sessionStorage.ID_USUARIO
         })
     }).then(function (resposta) {
         if (resposta.ok) {
             console.log(`Inserção feita com sucesso!`)
             console.log(resposta.json)
-            // setTimeout(function () {
-            //     window.location = "../dash.html";
-            // }, 1000);
+
         } else {
             console.log(`Inserção não pôde ser realizada...`)
-            console.log(resposta)
-            // setTimeout(function () {
-            //     // window.location = "../quiz.html";
-            // }, 1000);
+
         }
     }).catch(function (erro) {
         console.log(erro);
     })
 
+    // BOTÃO QUE REDIRECIONA PRA DASH
     botaoDashboard.addEventListener('click', function () {
         window.location.href = 'dash.html'
     })

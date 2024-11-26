@@ -2,12 +2,10 @@ const container = document.getElementById('container');
 const botaoRegistrar = document.getElementById('registrar');
 const botaoLogar = document.getElementById('login');
 
-// Registrar - ativa o modo de cadastro
 botaoRegistrar.addEventListener('click', () => {
     container.classList.add('active');
 });
 
-// Logar - ativa o modo de login
 botaoLogar.addEventListener('click', () => {
     container.classList.remove('active');
 });
@@ -15,7 +13,7 @@ botaoLogar.addEventListener('click', () => {
 
 
 
-//
+
 
 function apagarMensagemErro() {
     cardErro.style.display = "none"
@@ -29,6 +27,7 @@ function limparFormulario() {
     generoUsuario.value = ""
 }
 
+// COMEÇO O CADASTRO AQUI
 function cadastrar() {
     var nomeVar = nomeUsuario.value
     var emailVar = emailUsuario.value
@@ -38,6 +37,7 @@ function cadastrar() {
 
     console.log(generoVar)
 
+    // VALIDAR CAMPOS EM BRANCO
     if (
         nomeVar == "" ||
         emailVar == "" ||
@@ -54,7 +54,6 @@ function cadastrar() {
 
     // VALIDAÇÃO SENHA
     var validarSenha = senhaVar.length > 6;
-
     if (validarSenha != true) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
@@ -62,28 +61,24 @@ function cadastrar() {
         setInterval(apagarMensagemErro, 5000)
         return false;
     }
-    // VALIDAR CPF
-
+    // VALIDAÇÃO EMAIL
     var validarEmail = emailVar.indexOf('@') != -1
-
     if (validarEmail != true) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
             "O campo Email precisa o símbolo @";
-
         setInterval(apagarMensagemErro, 5000)
         return false;
     }
 
-    // Enviando o valor da nova input
+
+    // FETCH PARA CADASTRAR OS USUÁRIOS NO MEU BANCO
     fetch("/usuarios/cadastrar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
             nomeServer: nomeVar,
             emailServer: emailVar,
             senhaServer: senhaVar,
@@ -96,7 +91,6 @@ function cadastrar() {
 
             if (resposta.ok) {
                 cardErro.style.display = "block";
-
                 mensagem_erro.innerHTML =
                     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
                 limparFormulario();
@@ -104,23 +98,22 @@ function cadastrar() {
                     window.location = "logincadastro.html";
                 }, "2000");
 
-
             } else {
                 cardErro.style.display = "block";
                 mensagem_erro.innerHTML =
                     "Houve um erro... verifique os dados inseridos e/ou sua conexão";
-                    setInterval(apagarMensagemErro, 5000)
-                    return false;
+                setInterval(apagarMensagemErro, 5000)
+                return false;
             }
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-
     return false;
 }
 
 
+// FAZENDO O LOGIN
 function entrar() {
     var emailVar = emailUsuarioEntrar.value
     var senhaVar = senhaUsuarioEntrar.value
@@ -136,6 +129,7 @@ function entrar() {
     console.log("FORM SENHA: ", senhaVar);
 
 
+    // FETCH PARA AUTENTICAÇÃO DO LOGIN
     fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
@@ -160,18 +154,13 @@ function entrar() {
                 sessionStorage.IDADE_USUARIO = json.idade;
                 sessionStorage.GENERO_USUARIO = json.genero;
 
-
-
-
-
-
                 fetch("/pontuacao/verificarRegistros", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        idUsuarioServer: sessionStorage.ID_USUARIO
+                        idUsuarioServer: sessionStorage.ID_USUARIO // fora das chaves do then json não funciona mais, então uso o sessionStorage
                     })
                 }).then(function (resposta) {
                     if (resposta.ok) {
@@ -188,7 +177,6 @@ function entrar() {
                 })
             });
 
-            // fora das chaves do then (json) ele não funciona mais, então usamos o sessionStorage
 
         } else {
             console.log("Houve um erro ao tentar realizar o login!");

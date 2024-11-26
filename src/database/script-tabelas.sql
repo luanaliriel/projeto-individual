@@ -60,36 +60,36 @@ INSERT INTO usuario (nome, senha, email, idade, genero) VALUES
 
 
 INSERT INTO pontuacao (pontosShizuku, pontosSeiji, personagemFinal, fkUsuario) VALUES
-(7, 3, 'Shizuku', 1), -- Luana Liriel (22 anos, jovem)
-(3, 7, 'Shizuku', 2),   -- Jorge Uliam (23 anos, mais jovem)
-(6, 4, 'Shizuku', 3), -- Amanda Silva (27 anos, jovem)
-(4, 6, 'Seiji', 4),   -- Carlos Eduardo (30 anos, jovem com equilíbrio)
-(8, 2, 'Shizuku', 5), -- Julia Souza (19 anos, muito jovem)
-(2, 8, 'Seiji', 6),   -- Marcos Vinícius (34 anos, mais velho)
-(7, 3, 'Shizuku', 7), -- Ana Paula (28 anos, jovem)
-(6, 4, 'Shizuku', 8), -- Rafael Alves (23 anos, jovem)
-(8, 2, 'Shizuku', 9), -- Beatriz Lima (21 anos, jovem)
-(2, 8, 'Seiji', 10),  -- Gabriel Costa (49 anos, mais velho)
-(7, 3, 'Shizuku', 11),-- Mariana Ferreira (24 anos, jovem)
-(5, 5, 'Mistura', 12),-- Lucas Oliveira (29 anos, equilíbrio)
-(8, 2, 'Shizuku', 13),-- Isabela Rocha (22 anos, jovem)
-(4, 6, 'Seiji', 14),  -- Pedro Henrique (31 anos, mais velho)
-(3, 7, 'Seiji', 15),  -- Fernanda Gomes (56 anos, mais velho)
-(6, 4, 'Shizuku', 16),-- Thiago Martins (27 anos, jovem)
-(8, 2, 'Shizuku', 17),-- Carolina Santos (19 anos, muito jovem)
-(4, 6, 'Seiji', 18),  -- Vinícius Mendes (33 anos, mais velho)
-(7, 3, 'Shizuku', 19),-- Letícia Andrade (23 anos, jovem)
-(6, 4, 'Shizuku', 20),-- Fábio Monteiro (28 anos, jovem)
-(3, 7, 'Seiji', 21),  -- Lara Campos (58 anos, mais velho)
-(6, 4, 'Shizuku', 22),-- Bruno Silva (26 anos, jovem)
-(5, 5, 'Mistura', 23),-- Camila Ribeiro (30 anos, equilíbrio)
-(3, 7, 'Seiji', 24),  -- Gustavo Moraes (61 anos, mais velho)
-(7, 3, 'Shizuku', 25),-- Patrícia Lopes (25 anos, jovem)
-(4, 6, 'Seiji', 26),  -- Eduardo Nascimento (31 anos, mais velho)
-(2, 8, 'Seiji', 27),  -- Sabrina Oliveira (69 anos, muito velho)
-(4, 6, 'Seiji', 28),  -- Ricardo Barbosa (32 anos, mais velho)
-(7, 3, 'Shizuku', 29),-- Natália Cunha (22 anos, jovem)
-(3, 7, 'Seiji', 30),  -- Felipe Cardoso (67 anos, muito velho)
+(7, 3, 'Shizuku', 1), 
+(3, 7, 'Shizuku', 2),  
+(6, 4, 'Shizuku', 3), 
+(4, 6, 'Seiji', 4),   
+(8, 2, 'Shizuku', 5), 
+(2, 8, 'Seiji', 6),   
+(7, 3, 'Shizuku', 7), 
+(6, 4, 'Shizuku', 8),
+(8, 2, 'Shizuku', 9),
+(2, 8, 'Seiji', 10),  
+(7, 3, 'Shizuku', 11),
+(5, 5, 'Mistura', 12),
+(8, 2, 'Shizuku', 13),
+(4, 6, 'Seiji', 14),  
+(3, 7, 'Seiji', 15),  
+(6, 4, 'Shizuku', 16),
+(8, 2, 'Shizuku', 17),
+(4, 6, 'Seiji', 18), 
+(7, 3, 'Shizuku', 19),
+(6, 4, 'Shizuku', 20),
+(3, 7, 'Seiji', 21),  
+(6, 4, 'Shizuku', 22),
+(5, 5, 'Mistura', 23),
+(3, 7, 'Seiji', 24),  
+(7, 3, 'Shizuku', 25),
+(4, 6, 'Seiji', 26),  
+(2, 8, 'Seiji', 27),  
+(4, 6, 'Seiji', 28), 
+(7, 3, 'Shizuku', 29),
+(3, 7, 'Seiji', 30),  
 (4, 6, 'Seiji', 31),
 (5, 5, 'Mistura', 32),
 (5, 5, 'Mistura', 33);
