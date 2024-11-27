@@ -19,9 +19,9 @@ var lista30plus = []
 var listaPersonagensG3 = []
 var generos = ['Feminino', 'Masculino'] // vetor com os generos feminino e masculino
 var contagens = { Feminino: [], Masculino: [] } // json para armazenar as contagens por genero
-
 var listaFeminino = [];
 var listaMasculino = [];
+
 
 // limpo o session storage (saio da conta atual) e vou pra home
 function sairDaSessao() {
