@@ -26,7 +26,7 @@ body {
 }
 
 header {
-    margin-top: 3%;
+    margin-top: 4.2%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +114,7 @@ a {
     flex-direction: row;
     gap: 60px;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 65px;
 }
 
 .navbar {
@@ -139,12 +139,13 @@ a {
 }
 
 main {
-    margin-top: 8vh;
+    margin-top: 3vh;
     align-items: center;
     padding: 2vh;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    margin-bottom: 5vh;
 }
 
 #botaoiniciarquiz {
@@ -174,12 +175,13 @@ section {
     background-color: #D9FFFC;
     display: flex;
     flex-direction: row;
-    margin-top: -2vh;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 main section aside p {
     padding: 1.9vh;
+    font-weight: normal;
+    font-size: 2.1vh;
 }
 
 h2 {
@@ -206,7 +208,7 @@ h2 {
 }
 
 #sobrequiz {
-    width: 46vh;
+    width: 50vh;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     z-index: 1;
@@ -242,4 +244,96 @@ h2 {
 }
 .sobre-mim p {
     padding: 1.7vh;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #00d8c6;
+    height: 1px;
+    padding: 4%;
+    flex-direction: column;
+}
+footer .social-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+}
+footer .social-icons li {
+    list-style: none;
+}
+footer .social-icons li a {
+    font-size: 2.5em;
+    color: #D9FFFC;
+    display: inline-block;
+    margin: 0 1vh;
+    transition: transform 0.3 ease;
+}
+footer .social-icons li a:hover{
+    transform: scale(1.5);
+    color: #00D8C6;
+}
+footer p {
+    color: black;
+    text-align: center;
+    margin: 1vh;
+    font-size: 2.1vh;
+}
+footer .wave {
+    position: absolute;
+    top: -78px;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../assets/img/onda1.png);
+    background-size: 1000px 100px;
+}
+
+/* aqui eu criei 4 ondas sobrepostas com niveis diferentes de opacidade, posicoes diferentes, direçoes de movimento diferente o que traz um efeito mais fluido e realista */
+
+footer .wave#wave1 {
+    z-index: 1000;
+opacity: 1;
+bottom: 0;
+animation: animarOnda 4s linear infinite;
+}
+footer .wave#wave2 {
+    z-index: 999;
+opacity: 1;
+bottom: 0;
+animation: animarOnda-02 4s linear infinite;
+}
+footer .wave#wave3 {
+    z-index: 1000;
+opacity: 0.2;
+bottom: 15px;
+animation: animarOnda-02 3s linear infinite;
+}
+footer .wave#wave4 {
+    z-index: 999;
+opacity: 0.3;
+bottom: 20px;
+animation: animarOnda-02 3s linear infinite;
+}
+@keyframes animarOnda {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+@keyframes animarOnda-02 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
 }

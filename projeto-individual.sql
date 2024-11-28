@@ -150,3 +150,16 @@ from pontuacao inner join usuario
 on idUsuario = fkUsuario
 group by 1,2
 order by personagemFinal desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
