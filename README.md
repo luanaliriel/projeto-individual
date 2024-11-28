@@ -1,5 +1,5 @@
 # 🌟 Projeto Individual: Sussurros do Coração 🌟  
-![Descrição da imagem](https://i.ibb.co/KXxsfbh/Screenshot-2024-11-28-at-14-56-41.png)
+<a href="https://ibb.co/k9FTtBL"><img src="https://i.ibb.co/9Vj07gx/projeto.png" alt="projeto" border="0"></a>
 
 **Bem-vindo(a) ao repositório do projeto "Sussurros do Coração"**!  
 Este projeto foi desenvolvido como uma homenagem ao filme **"Sussurros do Coração"** (1995), dirigido por Yoshifumi Kondo e roteirizado por Hayao Miyazaki, um marco na história da animação. O objetivo do projeto é criar uma experiência interativa e emocional que conecte os usuários aos temas centrais do filme, como **autodescoberta, determinação, criatividade e superação de desafios**.
