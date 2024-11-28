@@ -1,4 +1,5 @@
 CREATE DATABASE sussurrosDoCoracao;
+SHOW DATABASES;
 
 USE sussurrosDoCoracao;
 
@@ -151,15 +152,4 @@ on idUsuario = fkUsuario
 group by 1,2
 order by personagemFinal desc;
 
-
-
-
-
-
-
-
-
-
-
-
-
+select * from usuario;
