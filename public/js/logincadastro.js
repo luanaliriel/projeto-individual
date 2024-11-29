@@ -71,6 +71,16 @@ function cadastrar() {
         return false;
     }
 
+    // VALIDAÇÃO IDADE
+
+    if (idadeVar < 10) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+            "Usuário deve ter no mínimo 10 anos de idade";
+        setInterval(apagarMensagemErro, 5000)
+        return false;
+    }
+
 
     // FETCH PARA CADASTRAR OS USUÁRIOS NO MEU BANCO
     fetch("/usuarios/cadastrar", {
