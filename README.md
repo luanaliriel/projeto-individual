@@ -1,4 +1,4 @@
-# 🌟 Projeto Individual: Sussurros do Coração 🌟  
+# 🌟 Projeto Individual: Sussurros do Coração  
 <a href="https://ibb.co/k9FTtBL"><img src="https://i.ibb.co/9Vj07gx/projeto.png" alt="projeto" border="0"></a>
 
 **Bem-vindo(a) ao repositório do projeto "Sussurros do Coração"**!  
