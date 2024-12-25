@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Shizuku ou Seiji?</title>
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+
+    <header>
+        <a class=home href="index.html">HOME</a>
+        <div class="container1"></div>
+        <div class="container2"></div>
+        <div class="container3"></div>
+    </header>
+    <nav class="navegador">
+        <nav class="navbar">
+            <a href="sobre.html">SOBRE</a>
+        </nav>
+        <nav class="navbar">
+            <a href="quiz.html">QUIZ</a>
+        </nav>
+        <nav class="navbar">
+            <a href="logincadastro.html">LOGIN | CADASTRO</a>
+        </nav>
+    </nav>
+
+    <!-- tela de introdução ao quiz -->
+
+    <div id="introducao">
+            <img src="assets/img/1quiz.webp" id="img1">
+        <div id="container-introducao">
+            <h1>Descubra com quem você se parece!</h1>
+            <h3><span id="shizuku">Shizuku</span> ou <span id="seiji">Seiji?</span></h3>
+            <button id="botao-comecar">Iniciar quiz!</button>
+        </div>
+        <div id="quiz" class="hidden">
+            <div id="container-pergunta">
+                <p id="pergunta"></p>
+                <div id="opcoes"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

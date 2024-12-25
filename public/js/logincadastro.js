@@ -82,6 +82,9 @@ function cadastrar() {
     }
 
 
+
+
+
     // FETCH PARA CADASTRAR OS USUÁRIOS NO MEU BANCO
     fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -123,6 +126,10 @@ function cadastrar() {
 }
 
 
+
+
+
+
 // FAZENDO O LOGIN
 function entrar() {
     var emailVar = emailUsuarioEntrar.value
@@ -139,7 +146,10 @@ function entrar() {
     console.log("FORM SENHA: ", senhaVar);
 
 
+
+
     // FETCH PARA AUTENTICAÇÃO DO LOGIN
+
     fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
@@ -164,6 +174,8 @@ function entrar() {
                 sessionStorage.IDADE_USUARIO = json.idade;
                 sessionStorage.GENERO_USUARIO = json.genero;
 
+
+                
                 fetch("/pontuacao/verificarRegistros", {
                     method: "POST",
                     headers: {
